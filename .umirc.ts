@@ -1,8 +1,7 @@
-import { IConfig } from 'umi-types';
 
 // ref: https://umijs.org/config/
 const config = {
-  treeShaking: true,
+  // treeShaking: true,
   routes: [
     {
       path: '/',
@@ -36,22 +35,37 @@ const config = {
       ]
     }
   ],
-  plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
-    ['umi-plugin-react', {
-      antd: true,
-      dva: false,
-      dynamicImport: false,
-      title: 'project-demo',
-      dll: false,
 
-      routes: {
-        exclude: [
-          /components\//,
-        ],
-      },
-    }],
-  ],
+  // plugins: [
+  //   // ref: https://umijs.org/plugin/umi-plugin-react.html
+  //   // ['umi-plugin-react', {
+  //   //   antd: true,
+  //   //   dva: false,
+  //   //   dynamicImport: false,
+  //   //   title: 'project-demo',
+  //   //   dll: true,
+  //   //   lessLoaderOptions: {
+  //   //     modifyVars: {
+  //   //       compact: false,
+  //   //     }
+  //   //   },
+  //   //   routes: {
+  //   //     exclude: [
+  //   //       /components\//,
+  //   //     ],
+  //   //   },
+  //   // }],
+
+  theme: {
+    'input-height-base': '42px',
+    'btn-height-base': '42px',
+    'primary-color': '#f5222d'
+  },
+
+  // ],
+  antd: {
+    compact: false
+  },
 }
 
 export default config;
