@@ -6,7 +6,7 @@ import {
 
 import styles from './index.less';
 
-export default function Login({ facebook, google, register, forgot}) {
+export default function Register({ facebook, google, register, forgot}) {
 
 
   return (
@@ -25,7 +25,7 @@ export default function Login({ facebook, google, register, forgot}) {
             <Form.Item
               // label="Username"
               name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]
+              rules={[{ required: true, message: 'Please input your email address!' }]
             }
             >
               <div className={styles.heading}>Email Address</div>
@@ -35,7 +35,7 @@ export default function Login({ facebook, google, register, forgot}) {
             <Form.Item
               // label="Username"
               name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]
+              rules={[{ required: true, message: 'Please input your first name!' }]
             }
             >
               <div className={styles.heading}>First Name</div>
@@ -45,7 +45,7 @@ export default function Login({ facebook, google, register, forgot}) {
             <Form.Item
               // label="Username"
               name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]
+              rules={[{ required: true, message: 'Please input your subname!' }]
             }
             >
               <div className={styles.heading}>Subname</div>
@@ -55,7 +55,7 @@ export default function Login({ facebook, google, register, forgot}) {
             <Form.Item
               // label="Username"
               name="username"
-              rules={[{ required: true, message: 'Please input your username!' }]
+              rules={[{ required: true, message: 'Please input your mobile phone!' }]
             }
             >
               <div className={styles.heading}>Mobile Phone</div>
@@ -127,7 +127,7 @@ export default function Login({ facebook, google, register, forgot}) {
   )
 }
 
-Login.defaultProps = {
+Register.defaultProps = {
   to: '/forgot',
   facebook: '/facebook',
   google: '/google',

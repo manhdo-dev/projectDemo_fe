@@ -1,5 +1,5 @@
 import React from 'react';
-import {  Button, Menu, Avatar, Card } from 'antd';
+import {  Button, Menu, Avatar, Card, Row, Col } from 'antd';
 import { MailOutlined, AppstoreOutlined, SettingOutlined, UserOutlined } from '@ant-design/icons';
 import {
   Link
@@ -61,68 +61,80 @@ export default function Profile({ to }) {
       </div> */}
     {/* </div> */}
 
-      <div className={styles.container}>
-        <Card bordered={true} className={styles.card}>
-          <div className={styles.boxName}>
-            <div className={styles.name}>My profile</div>
-            <div className={styles.item}>
-              <p>Username</p>
-              <input type="text" className={styles.input}/>
+      <Row justify="space-between" className={styles.container} align="middle">
+        <Col span={24}>
+          <Card bordered={true} className={styles.card} style={{ width: 1000}}>
+            <div className={styles.boxName}>
+              <div className={styles.name}>My profile</div>
+              <Row className={styles.row}>
+                <Col span={3}><div>Username</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>First name</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>Country</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>First Language</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>Second Language</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>Address</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>City</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>Post code / Zip</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
+              <Row className={styles.row}>
+                <Col span={3}><div>Email</div></Col>
+                <Col span={21}><input type="text" className={styles.input}/></Col>
+              </Row>
             </div>
-            <div className={styles.item}>
-              <p>First name</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>Country</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>First Language</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>Second Language</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>Address</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>City</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>Post code / Zip</p>
-              <input type="text" className={styles.input}/>
-            </div>
-            <div className={styles.item}>
-              <p>Email</p>
-              <input type="text" className={styles.input}/>
-            </div>
-          </div>
 
-          <div className={styles.boxImage}>
-            <span className={styles.name}>Profile picture</span>
-            <div className={styles.image}>
-              <img src="https://picsum.photos/200" alt=""/>
-            </div>
-            <Link to={to}>Change</Link>
-          </div>
+            <Row>
+              <Col span={8}>
+                <div className={styles.boxImage}>
+                  <span className={styles.name}>Profile picture</span>
+                  <div className={styles.image}>
+                    <img src="https://picsum.photos/200" alt=""/>
+                  </div>
+                  <Link to={to}>Change</Link>
+                </div>
+              </Col>
+            </Row>
 
-          <div className={styles.button}>
-            <div className={styles.name}>Login security</div>
-            <Button type="danger" htmlType="submit" styles={{ paddingRight: 5}}>
-              Activate
-            </Button>
-            &nbsp;
-            <Button type="secondary" htmlType="submit">
-              Deactivate
-            </Button>
-          </div>
-        </Card>
-      </div>
+            <div className={styles.button}>
+              <div className={styles.name}>Login security</div>
+
+              <Row>
+                <Col span={8}>
+                  <Button type="danger" htmlType="submit" styles={{ paddingRight: 5}}>
+                  Activate
+                  </Button>
+                </Col>
+                <Col span={8}>
+                  <Button type="secondary" htmlType="submit">
+                  Deactivate
+                  </Button>
+                </Col>
+              </Row>
+            </div>
+          </Card>
+        </Col>
+      </Row>
     </>
   )
 }
