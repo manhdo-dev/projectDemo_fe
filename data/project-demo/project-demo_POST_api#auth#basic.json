@@ -1,0 +1,10 @@
+{
+  "protocol": "http",
+  "pathname": "api/auth/basic",
+  "method": "POST",
+  "projectUniqId": "d3eddb1c-008a-4303-a6d4-b8bb5f2a5605",
+  "description": "login",
+  "currentScene": "Success",
+  "proxyConfig": {},
+  "uniqId": "13fe72b8-89d7-4675-88ca-2210a6924d60"
+}

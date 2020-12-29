@@ -1,0 +1,10 @@
+{
+  "protocol": "http",
+  "pathname": "api/auth/register",
+  "method": "POST",
+  "projectUniqId": "d3eddb1c-008a-4303-a6d4-b8bb5f2a5605",
+  "description": "register",
+  "currentScene": "Success",
+  "proxyConfig": {},
+  "uniqId": "e94215e8-7a23-4632-922f-54ad6f44b22a"
+}

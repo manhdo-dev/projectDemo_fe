@@ -1,0 +1,10 @@
+{
+  "protocol": "http",
+  "pathname": "api/profile",
+  "method": "GET",
+  "projectUniqId": "d3eddb1c-008a-4303-a6d4-b8bb5f2a5605",
+  "description": "profile",
+  "currentScene": "Success",
+  "proxyConfig": {},
+  "uniqId": "af0072b4-b990-4412-914b-f69216805f0d"
+}

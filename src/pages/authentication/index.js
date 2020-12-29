@@ -12,7 +12,7 @@ export default function Authentication({to}) {
         <Card bordered={true} className={styles.card} >
           <div className={styles.edit}>
             <h3>Manage two-factor authentication</h3>
-            <input className={styles.input} type="text" placeholder="Editing user: Name"/>
+            {/* <input className={styles.input} type="text" placeholder="Editing user: Name"/> */}
           </div>
 
           <div className={styles.content}>

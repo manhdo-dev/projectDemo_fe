@@ -1,18 +1,42 @@
-import React from 'react';
-import { Form, Input, Button, Checkbox, Card, Row , Col } from 'antd';
+import React, { useCallback } from 'react';
+import { Form, Input, Button, Card, Row , Col, notification } from 'antd';
 import {
   Link
 } from "react-router-dom";
+
+import { history, useRequest } from 'umi';
 
 import styles from './index.less';
 
 export default function Register({ facebook, google, register, forgot}) {
 
+  const registerAsync = useRequest((data) => ({
+    url: '/auth/register',
+    method: 'post',
+    data,
+  }),
+     {
+      manual: true,
+      onSuccess: () => {
+        history.replace('/login');
+      },
+
+      onError: err => {
+        notification.warn({
+          message: err.message,
+        });
+      },
+    },
+  );
+
+  const handleSubmit = useCallback(values => registerAsync.run(values), [
+    registerAsync
+  ]);
 
   return (
       <Row justify="space-between" className={styles.container} align="middle">
         <Col span={24}>
-          <Card bordered={true} className={styles.card} style={{ width: 500, borderRadius: 10}}>
+          <Card bordered={true} className={styles.card} style={{ maxWidth: 500, borderRadius: 10}}>
             <div className={styles.title}>
             <span>Agile</span>
               Tech
@@ -20,69 +44,66 @@ export default function Register({ facebook, google, register, forgot}) {
 
             <Form
             name="basic"
+            layout="vertical"
+            onFinish={handleSubmit}
             initialValues={{ remember: true }}
           >
             <Form.Item
-              // label="Username"
+              label="Username"
               name="username"
+              rules={[{ required: true, message: 'Please input your username!' }]
+            }
+            >
+              <Input />
+            </Form.Item>
+
+            <Form.Item
+              label="Email Address"
+              name="email"
               rules={[{ required: true, message: 'Please input your email address!' }]
             }
             >
-              <div className={styles.heading}>Email Address</div>
               <Input />
             </Form.Item>
 
             <Form.Item
-              // label="Username"
-              name="username"
+              label="First Name"
+              name="firstName"
               rules={[{ required: true, message: 'Please input your first name!' }]
             }
             >
-              <div className={styles.heading}>First Name</div>
               <Input />
             </Form.Item>
 
             <Form.Item
-              // label="Username"
-              name="username"
-              rules={[{ required: true, message: 'Please input your subname!' }]
+              label="Last Name"
+              name="lastName"
+              rules={[{ required: true, message: 'Please input your last name!' }]
             }
             >
-              <div className={styles.heading}>Subname</div>
               <Input />
             </Form.Item>
 
             <Form.Item
-              // label="Username"
-              name="username"
+              label="Mobile Phone"
+              name="phone"
               rules={[{ required: true, message: 'Please input your mobile phone!' }]
             }
             >
-              <div className={styles.heading}>Mobile Phone</div>
               <Input />
             </Form.Item>
 
             <Form.Item
-              // label="Password"
+              label="Password"
               name="password"
               rules={[{ required: true, message: 'Please input your password!' }]}
             >
-              <div className={styles.heading}>Password</div>
               <Input.Password />
             </Form.Item>
 
-            <div className={styles.remember}>
-              <div>
-                <Checkbox name="remember" valuePropName="checked">Remember me</Checkbox>
-              </div>
-              <div>
-                <Link to={forgot} className={styles.forgot}>Forgot password</Link>
-              </div>
-            </div>
-
             <Form.Item>
               <Button type="primary" htmlType="submit" block>
-                LOGIN
+                REGISTER
               </Button>
             </Form.Item>
 
@@ -111,15 +132,6 @@ export default function Register({ facebook, google, register, forgot}) {
                   </div>
                 </div>
               </div>
-
-              <div className={styles.footer}>
-                <span>
-                  Or create a new account
-                </span>
-                <Link to={register}>
-                  here
-                </Link>
-              </div>
             </Form>
           </Card>
         </Col>
@@ -133,4 +145,5 @@ Register.defaultProps = {
   google: '/google',
   register: '/register',
   forgot: '/forgot-password'
+
 }

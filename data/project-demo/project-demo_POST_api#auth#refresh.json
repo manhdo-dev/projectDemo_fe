@@ -1,0 +1,10 @@
+{
+  "protocol": "http",
+  "pathname": "api/auth/refresh",
+  "method": "POST",
+  "projectUniqId": "d3eddb1c-008a-4303-a6d4-b8bb5f2a5605",
+  "description": "refresh",
+  "currentScene": "Success",
+  "proxyConfig": {},
+  "uniqId": "9beea9b7-bbb9-48ff-8018-1a326f299aa2"
+}

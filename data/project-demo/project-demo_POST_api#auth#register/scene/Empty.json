@@ -1,0 +1,11 @@
+{
+  "sceneName": "Empty",
+  "data": {},
+  "interfaceUniqId": "e94215e8-7a23-4632-922f-54ad6f44b22a",
+  "contextConfig": {
+    "responseDelay": 0,
+    "responseStatus": 200,
+    "responseHeaders": {}
+  },
+  "uniqId": "54b45ea7-6b24-4cb2-bdc2-ef0edc324bc2"
+}

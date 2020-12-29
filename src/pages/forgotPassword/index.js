@@ -1,35 +1,66 @@
-import React from 'react';
-import { Card, Form, Input, Button, Row, Col } from 'antd';
+import React, { useCallback } from 'react';
+import { Card, Form, Input, Button, Row, Col, notification } from 'antd';
 import {
   Link
 } from "react-router-dom";
+import { history, useRequest, useModel } from 'umi';
 
 import styles from './index.less';
+import { forgotPassword } from './service';
 
 export default function ForgotPassword({facebook, google, register}) {
 
+  const { refresh } = useModel('@@initialState');
+
+  // console.log('--------------------------------');
+  // console.log('initialState', initialState);
+  // console.log('--------------------------------');
+
+  const loginAsync = useRequest(
+    async args => {
+      await forgotPassword(args);
+      await refresh();
+    },
+    {
+      manual: true,
+      onSuccess: () => {
+        history.push('/');
+      },
+
+      onError: err => {
+        notification.warn({
+          message: err.message,
+        });
+      },
+    },
+  );
+
+  const handleSubmit = useCallback(values => loginAsync.run(values), [
+    loginAsync,
+  ]);
 
   return (
     <Row justify="space-between" className={styles.container} align="middle">
       <Col span={24}>
-        <Card bordered={true} className={styles.card} style={{ width: 500, borderRadius: 10, height: 600}}>
+        <Card bordered={true} className={styles.card} style={{ maxWidth: 500, borderRadius: 10, height: 600}}>
           <div className={styles.title}>
             <span>Agile</span>
               Tech
           </div>
           <Form
           name="basic"
+          layout="vertical"
+          onFinish={handleSubmit}
           initialValues={{ remember: true }}
         >
           <Form.Item
-            // label="Email, Username or Phone"
-            name="username"
-            rules={[{ required: true, message: 'Please input your email, username or phone!' }]
-          }
-          >
-            <div className={styles.heading}>Email, Username or Phone</div>
-            <Input />
-          </Form.Item>
+              label="Email Address"
+              name="email"
+              rules={[{ required: true, message: 'Please input your email address!' }]
+            }
+            >
+              <Input />
+            </Form.Item>
 
           <Form.Item>
             <Button type="danger" htmlType="submit" block>

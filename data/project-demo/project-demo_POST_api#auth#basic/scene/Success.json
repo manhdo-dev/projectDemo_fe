@@ -1,0 +1,25 @@
+{
+  "sceneName": "Success",
+  "data": {
+    "type": "object",
+    "properties": {
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "username",
+      "password"
+    ]
+  },
+  "interfaceUniqId": "13fe72b8-89d7-4675-88ca-2210a6924d60",
+  "contextConfig": {
+    "responseDelay": 0,
+    "responseStatus": 200,
+    "responseHeaders": {}
+  },
+  "uniqId": "7e52f35c-b150-448c-ae2c-fc9efc041132"
+}

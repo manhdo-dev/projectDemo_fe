@@ -1,0 +1,43 @@
+{
+  "sceneName": "Success",
+  "data": {
+    "type": "object",
+    "properties": {
+      "username": {
+        "type": "string",
+        "default": "admin"
+      },
+      "password": {
+        "type": "string",
+        "default": "123456@1"
+      },
+      "email": {
+        "type": "string"
+      },
+      "phone": {
+        "type": "string"
+      },
+      "firstName": {
+        "type": "string"
+      },
+      "lastName": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "username",
+      "password",
+      "email",
+      "phone",
+      "firstName",
+      "lastName"
+    ]
+  },
+  "interfaceUniqId": "e94215e8-7a23-4632-922f-54ad6f44b22a",
+  "contextConfig": {
+    "responseDelay": 0,
+    "responseStatus": 200,
+    "responseHeaders": {}
+  },
+  "uniqId": "c983f0f9-2d20-4652-9894-d44fceb28861"
+}

@@ -1,0 +1,13 @@
+{
+  "sceneName": "Success",
+  "data": {
+    "refreshToken": "string"
+  },
+  "interfaceUniqId": "9beea9b7-bbb9-48ff-8018-1a326f299aa2",
+  "contextConfig": {
+    "responseDelay": 0,
+    "responseStatus": 200,
+    "responseHeaders": {}
+  },
+  "uniqId": "e3c3110c-3e22-444b-bd7b-7e88185ceda1"
+}

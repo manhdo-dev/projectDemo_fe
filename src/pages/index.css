@@ -6,8 +6,8 @@
 
 .welcome {
     height: 512px;
-    background: url(../assets/yay.jpg) no-repeat center 0;
-    background-size: 512px 512px;
+    background: url(./background.jpg) no-repeat center 0;
+    background-size: 1024px 512px;
 }
 
 .list {
@@ -19,4 +19,18 @@
 
 .list code {
     background: #f7f7f7;
+}
+
+.title {
+    text-align: center;
+    font-size: 48px;
+    padding: 40px 0;
+    font-weight: 300;
+    font-family: sans-serif
+}
+
+.item {
+    font-weight: bold;
+    color: red;
+    font-family: sans-serif
 }
